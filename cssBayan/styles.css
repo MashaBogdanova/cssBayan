@@ -64,3 +64,42 @@ input:checked ~ .content {
 input:checked ~ label::after {
     background-image: url("pics/cross.svg");
 }
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    label {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .accordion {
+        width: 50vw;
+    }
+
+    img {
+        width: 75%;
+    }
+
+    label {
+        cursor: pointer;
+        font-size: 2rem;
+        height: 40px;
+    }
+
+    label:hover {
+        background-color: rgb(0, 85, 119);
+    }
+
+    label::after {
+        width: 25px;
+        height: 25px;
+    }
+}
