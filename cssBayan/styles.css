@@ -1,1 +1,66 @@
+h1 {
+    color: rgb(0, 85, 119);
+    font-size: 5rem;
+    text-align: center;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+}
 
+.accordion {
+    width: 90vw;
+    background-color: rgba(0, 85, 119, 0.8);
+    border-radius: 10px;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 95%;
+}
+
+.content, label {
+    padding: 15px 30px;
+}
+
+.content {
+    background-color: white;
+    display: none;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background 0.3s;
+    height: 80px;
+    font-size: 3rem;
+}
+
+label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-image: url("pics/check.svg");
+    background-size: contain;
+    transition: transform 0.4s;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ .content {
+    display: flex;
+    justify-content: center;
+
+}
+
+input:checked ~ label::after {
+    background-image: url("pics/cross.svg");
+}
