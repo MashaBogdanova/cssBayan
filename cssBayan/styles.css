@@ -9,7 +9,7 @@ h1 {
     font-size: 5rem;
     text-align: center;
     font-weight: lighter;
-    margin: 1rem auto;
+    margin: 3rem auto;
 }
 
 .accordion {
@@ -19,16 +19,14 @@ h1 {
     color: white;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
     transition: background 0.3s;
-}
-
-label, .content {
-    padding: 1rem 2rem;
+    border-radius: 1rem;
 }
 
 label {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem 2rem;
     height: 3em;
     font-size: 3rem;
 }
@@ -37,29 +35,39 @@ label {
     display: none;
 }
 
-span > img {
-    width: 3vh;
-    height: 3vh;
+label[for="pic1"] {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 input {
     display: none;
 }
 
+span > img {
+    width: 3vh;
+    height: 3vh;
+    animation: smooth 0.5s;
+}
+
 .content {
-    padding: 0 1em;
+    padding: 0 2rem;
     background-color: white;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s;
+    display: flex;
+    justify-content: center;
+    transition: max-height 0.5s;
 }
 
 .meme {
     width: 95%;
+    margin: 1em auto;
 }
 
 input:checked ~ .content {
-    max-height: 40em;
+    max-height: fit-content;
+    animation: smooth 0.5s;
 }
 
 input:checked ~ .label1 {
@@ -68,6 +76,17 @@ input:checked ~ .label1 {
 
 input:checked ~ .label2 {
     display: flex;
+    animation: smooth 0.5s;
+}
+
+@keyframes smooth {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -83,10 +102,11 @@ input:checked ~ .label2 {
 @media screen and (min-width: 1024px) {
     h1 {
         font-size: 3rem;
+        margin: 1rem auto;
     }
 
     .accordion {
-        width: 50vw;
+        width: 45vw;
     }
 
     .meme {
@@ -96,6 +116,7 @@ input:checked ~ .label2 {
     label {
         font-size: 2rem;
         cursor: pointer;
+        transition: background-color 0.4s;
     }
 
     label:hover {
