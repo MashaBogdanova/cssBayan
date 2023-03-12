@@ -40,6 +40,11 @@ label[for="pic1"] {
     border-top-right-radius: 1rem;
 }
 
+label[for="pic5"] {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
 input {
     display: none;
 }
@@ -77,6 +82,10 @@ input:checked ~ .label1 {
 input:checked ~ .label2 {
     display: flex;
     animation: smooth 0.5s;
+}
+
+input:checked ~ label[for="pic5"] {
+    border-radius: 0;
 }
 
 @keyframes smooth {
